@@ -16,7 +16,7 @@ export default function Login() {
     const response = await fetch("http://localhost:5000/api/loginUser", {
       method: 'POST',
       headers: {
-        "Content-Type": 'application/json'
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify({
         email: credentials.email,
@@ -30,7 +30,8 @@ export default function Login() {
       alert("Enter valid credentials");
     }
     if (json.success) {
-      localStorage.setItem('token',json.token);
+      localStorage.setItem('token', json.token);
+      localStorage.setItem('userEmail', credentials.email);
       console.log(localStorage.getItem('token'))
       navigate("/");
     }

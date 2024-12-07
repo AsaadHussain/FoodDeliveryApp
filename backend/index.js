@@ -11,6 +11,7 @@ app.use(express.json());
 
 app.use('/api', require('./Routes/createUser.js'))
 app.use('/api', require('./Routes/displayData.js'))
+app.use('/api', require('./Routes/orderData.js'))
 
 connectDB();
 
